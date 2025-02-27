@@ -9,11 +9,11 @@ Cinebuster is a sleek and modern single-page application built with **Next.js**,
 - 🔍 **Advanced Search & Filtering** – Find content easily using genre-based and keyword search.  
 - 🛡️ **Authentication & User Profiles** – Secure authentication with NextAuth, enabling personalized watchlists and reviews.  
 - 📊 **Drizzle ORM & Neon Database** – Efficient and scalable PostgreSQL database management.  
-- 🎨 **Modern UI** – Built with Tailwind CSS and ShadCN for a sleek, responsive design.  
+- 🎨 **Modern UI** – Built with Tailwind CSS and for a sleek, responsive design.  
 
 ## 🏗️ Tech Stack  
 
-- **Frontend**: [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [ShadCN](https://ui.shadcn.com/), [Tailwind CSS](https://tailwindcss.com/)  
+- **Frontend**: [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/)  
 - **Backend & Database**: [Drizzle ORM](https://orm.drizzle.team/), [Neon PostgreSQL](https://neon.tech/)  
 - **Authentication**: [NextAuth.js](https://next-auth.js.org/)  
 - **External API**: [The Movie Database (TMDb)](https://www.themoviedb.org/)  
