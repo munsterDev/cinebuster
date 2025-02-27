@@ -1,14 +1,14 @@
 import { auth } from '@/auth';
 import { db } from '@/database/drizzle';
-import { users } from '@/database/schema';
+import { accounts, users } from '@/database/schema';
 import { eq } from 'drizzle-orm';
 import { redirect } from 'next/navigation';
 import { after } from 'next/server';
-import Header from "@/components/header/Header"
 import React from 'react'
 import { ReactNode } from 'react'
 import Footer from '@/components/footer/Footer';
-import AppSidebar  from '@/components/sidebar/AppSidebar';
+import { AppSidebar } from '@/components/sidebar/AppSidebar';
+import { Account } from '@/types';
 
 const Layout = async ({ children }: { children: ReactNode }) => {
   const session = await auth();
@@ -31,12 +31,11 @@ const Layout = async ({ children }: { children: ReactNode }) => {
       .toISOString().slice(0,10)})
       .where(eq(users.id, session.user.id));
   })
+  const userAccount = await db.select().from(accounts).where(eq(accounts.userId, session?.user?.id ?? "")).limit(1) as Account[];
+  
   return (
       <main className='' suppressHydrationWarning>
-        <div className="">
-            <Header session={session!}/>
-            {children}
-        </div>
+          <AppSidebar session={session!} userAccount={userAccount[0]} children={children}/>
       </main>
   );
 }

@@ -1,6 +1,6 @@
 'use client'
 import { Session } from "next-auth"
-import { Button } from "./ui/button"
+import { Button } from "@mantine/core"
 import { signIn, signOut } from "next-auth/react"
  
 export default function SignInForm(session : {session : Session}) {
